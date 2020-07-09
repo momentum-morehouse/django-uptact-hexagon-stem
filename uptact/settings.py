@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-uptact-hexagon-stem-2--hexagonstem.repl.co', 'django-uptact-hexagon-stem-2.hexagonstem.repl.co']
 
 # Application definition
 

@@ -17,5 +17,6 @@ class ContactForm(forms.ModelForm):
             'birthday',
         ]
     widgets = {
-      'birthday': forms.DateInput(format=('%m/%d%Y'),attrs={'class',})
+      'birthday': forms.DateInput(format=('%m/%d%Y'), attrs={'class':'form-control', 'placeholder':'Select a date', 'type':'date'
+})
     }
