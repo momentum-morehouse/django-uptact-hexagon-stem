@@ -54,3 +54,15 @@ def contact_detail(request, pk):
     return render(request, "contacts/contact_detail.html", {
         "contact": contact
     })
+
+def post_note(request,pk):
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            new_note = form.save(commit=False)
+            new_note.contact_id = pk 
+            new_note.save()
+            return redirect(to='contact_view',pk=pk)
+    else:
+        form = NoteForm()
+    return render(request,  'contacts/notes.html' , {'form': form})

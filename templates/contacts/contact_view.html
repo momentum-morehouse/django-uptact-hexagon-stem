@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+
 {% block content %}
+<h1>Contact View</h1>
+
+<div class="flex flex-wrap"> 
  <div class="w-33 pa3">
     <h2>{{ contact.name }}</h2>
 
@@ -14,7 +18,18 @@
       </div>
     </div>
 
-    {% if contact.phone_number %}
+<div class="noteDetails">
+  <ul>
+
+    {% for note in contact.notes.all %}
+    <li>{note.note}}</li>
+
+    {% endfor %}
+
+  </ul>
+
+</div>
+    <!-- {% if contact.phone_number %}
     <div class="flex">
       <div class="pr2"><i class="icofont-phone"></i></div>
       <div>{{ contact.phone_number }}</div>
@@ -51,5 +66,5 @@
     </div>
     {% endif %}
   </div>
-</div>  
+</div>   -->
 {% endblock %}
